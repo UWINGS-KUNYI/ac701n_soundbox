@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Release" />
+	<File name="cpu\br28\audio_common\app_audio.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="50541" topLine="1704" />
+		</Cursor>
+	</File>
+	<File name="apps\soundbox\app_main.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3277" topLine="118" />
+		</Cursor>
+	</File>
+	<File name="apps\soundbox\common\init.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4412" topLine="184" />
+		</Cursor>
+	</File>
+	<File name="apps\soundbox\user_api\app_pwmled_api.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13146" topLine="208" />
+		</Cursor>
+	</File>
+	<File name="apps\soundbox\include\app_main.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3601" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="apps\soundbox\board\br28\board_jl701n_demo\board_jl701n_demo_cfg.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="544" topLine="12" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
