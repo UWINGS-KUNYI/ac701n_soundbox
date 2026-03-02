@@ -35,3 +35,15 @@ SDK 发布的时候，默认发布了 .cbp 后缀的 Code::Blocks 工程。此�
 - [使用 Code::Blocks 进行编译](https://doc.yunthinker.com/#/docs/Environment/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/2?id=_21-%e4%bd%bf%e7%94%a8-codeblocks-%e8%bf%9b%e8%a1%8c%e7%bc%96%e8%af%91)
 - [使用 make 进行编译](https://doc.yunthinker.com/#/docs/Environment/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/2?id=_22-%e4%bd%bf%e7%94%a8-make-%e8%bf%9b%e8%a1%8c%e7%bc%96%e8%af%91)
 - [使用 VSCode 进行编译](https://doc.yunthinker.com/#/docs/Environment/%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/2?id=_23-%e4%bd%bf%e7%94%a8-vscode-%e8%bf%9b%e8%a1%8c%e7%bc%96%e8%af%91)
+
+
+
+社区
+------------
+技术交流QQ群：764468449
+
+
+注意事项
+------------
+
+请通过[AC701N 系列芯片样品购买](https://item.taobao.com/item.htm?id=1016552311375)  渠道购买样品，其他渠道芯片可能会出现key不一致报错，无法下载程序等问题，且无法提供相关技术支持。 
