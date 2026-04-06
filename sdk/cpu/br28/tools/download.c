@@ -5,6 +5,8 @@
 
 ##!/bin/sh
 
+cd $(dirname $0)
+
 ${OBJDUMP} -D -address-mask=0x7ffffff -print-imm-hex -print-dbg -mcpu=r3 $1.elf > $1.lst
 ${OBJCOPY} -O binary -j .text $1.elf text.bin
 ${OBJCOPY} -O binary -j .data  $1.elf data.bin
@@ -18,6 +20,7 @@ ${OBJDUMP} -section-headers -address-mask=0x7ffffff $1.elf
 ${OBJSIZEDUMP} -lite -skip-zero -enable-dbg-info $1.elf | sort -k 1 >  symbol_tbl.txt
 
 cat text.bin data.bin mov_slot.bin data_code.bin aec.bin aac.bin psram_data_code.bin > app.bin
+rm -f text.bin data.bin data_code.bin aec.bin aac.bin aptx.bin common.bin psram_data_code.bin
 
 /* if [ -f version ]; then */
     /* host-client -project ${NICKNAME}$2 -f app.bin version $1.elf p11_code.bin br28loader.bin br28loader.uart uboot.boot uboot.boot_debug ota.bin ota_debug.bin isd_config.ini */
@@ -76,7 +79,7 @@ cp ./EFF_DIR/music_base.bin eq_cfg_hw.bin
 #endif
 
 
-/opt/utils/strip-ini -i isd_config.ini -o isd_config.ini
+## /opt/utils/strip-ini -i isd_config.ini -o isd_config.ini
 
 if [ -f version ]; then
     files="app.bin version $1.elf p11_code.bin br28loader.bin br28loader.uart uboot.boot uboot.boot_debug ota.bin nor_ota.bin ota_debug.bin isd_config.ini isd_download.exe ufw_maker.exe fw_add.exe"
@@ -85,10 +88,25 @@ else
 
 fi
 
-host-client -project ${NICKNAME}$2_${APP_CASE} -f ${files}
+## host-client -project ${NICKNAME}$2_${APP_CASE} -f ${files}
+
+#ifdef CONFIG_WATCH_CASE_ENABLE
+sh download/watch/download.sh
+#elif defined(CONFIG_SOUNDBOX_CASE_ENABLE)
+sh download/soundbox/download.sh
+#elif defined(CONFIG_EARPHONE_CASE_ENABLE)
+ #if (RCSP_ADV_EN == 0)
+sh download/earphone/download.sh
+#else
+sh download/earphone/download_app_ota.sh
+#endif
+#elif defined(CONFIG_HID_CASE_ENABLE) ||defined(CONFIG_SPP_AND_LE_CASE_ENABLE)||defined(CONFIG_MESH_CASE_ENABLE)||defined(CONFIG_DONGLE_CASE_ENABLE)    //数传
+sh download/data_trans/download.sh
+#else
+//to do other case
+#endif  //endif app_case
 
 #else
-
 @echo off
 Setlocal enabledelayedexpansion
 @echo ********************************************************************************

@@ -1,0 +1,28 @@
+# toolchain、postbuild、download
+toolchain/
+postbuild/
+download/
+
+# generation
+sdk/sdk.lst
+sdk/symbol_tbl.txt
+sdk/cpu/br28/sdk_used_list.used
+sdk/cpu/br28/sdk.ld
+sdk/cpu/br28/tools/download.sh
+sdk/cpu/br28/tools/isd_config.ini
+sdk/app.bin
+sdk/objs/
+
+sdk/cpu/br28/sdk.ld
+sdk/cpu/br28/sdk_used_list.used
+sdk/cpu/br28/tools/app.bin
+sdk/cpu/br28/tools/isd_config.ini
+sdk/cpu/br28/tools/mov_slot.bin
+sdk/cpu/br28/tools/sdk.elf
+sdk/cpu/br28/tools/sdk.elf.0.*
+sdk/cpu/br28/tools/sdk.elf.o
+sdk/cpu/br28/tools/sdk.elf.objs.txt
+sdk/cpu/br28/tools/sdk.elf.resolution.txt
+sdk/cpu/br28/tools/sdk.lst
+sdk/cpu/br28/tools/sdk.map
+sdk/cpu/br28/tools/symbol_tbl.txt

@@ -32,8 +32,17 @@ FIXBAT          := tools\utils\fixbat.exe # 用于处理 utf8->gbk 编码问题
 POST_SCRIPT     := cpu/br28/tools/download.bat
 RUN_POST_SCRIPT := cpu\br28\tools\download.bat
 else
+#
+# Linux 工具路径设置
+#
+MAKEFILE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+DOWNLOAD_DIR := $(abspath $(MAKEFILE_DIR)/../download)
+POST_BUILD_TOOLS_DIR ?= $(abspath $(MAKEFILE_DIR)/../postbuild)
+CROSS_COMPILER_PATH ?= $(abspath $(MAKEFILE_DIR)/../toolchain/pi32v2/bin)
+export POST_BUILD_TOOLS_DIR
+export CROSS_COMPILER_PATH
 # Linux 下工具链位置
-TOOL_DIR := /opt/jieli/pi32v2/bin
+TOOL_DIR := $(CROSS_COMPILER_PATH)/pi32v2/bin
 CC    := clang
 CXX   := clang
 LD    := lto-wrapper
@@ -1038,6 +1047,13 @@ pre_build:
 	$(QUITE) $(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -D__LD__ -E -P cpu/br28/tools/download.c -o $(POST_SCRIPT)
 	$(QUITE) $(FIXBAT) $(POST_SCRIPT)
 	$(QUITE) $(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -D__LD__ -E -P cpu/br28/tools/isd_config_rule.c -o cpu/br28/tools/isd_config.ini
+#      生成 sdk_used_list.used sdk.ld download.sh isd_config.ini 四个文件，供链接脚本和后续的工具使用
+#      后续会被 jl_strip.py 解析并生成对应平台的後處理乾淨腳本
+	$(QUITE) python3  cpu/br28/tools/jl_strip.py \
+			cpu/br28/sdk_used_list.used \
+			cpu/br28/sdk.ld \
+			cpu/br28/tools/download.sh \
+			cpu/br28/tools/isd_config.ini
 
 clean:
 	$(QUITE) $(RM) $(OUT_ELF)

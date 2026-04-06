@@ -12,20 +12,20 @@
 
 #define CONFIG_UPDATE_JUMP_TO_MASK              0   	//配置升级到loader的方式0为直接reset,1为跳转(适用于芯片电源由IO口KEEP住的方案,需要注意检查跳转前是否将使用DMA的硬件模块全部关闭)
 
-#define CONFIG_LP_TOUCH_KEY_EN					0		//配置是否使用内置触摸
-#define CONFIG_UPDATE_WITH_MD5_CHECK_EN			0 		//配置升级是否支持MD5校验
+#define CONFIG_LP_TOUCH_KEY_EN			0	//配置是否使用内置触摸
+#define CONFIG_UPDATE_WITH_MD5_CHECK_EN		0 	//配置升级是否支持MD5校验
 
-#define CONFIG_ANC_ENABLE           			0		//配置是否支持ANC
+#define CONFIG_ANC_ENABLE           		0	//配置是否支持ANC
 
 //flash size vaule definition
-#define FLASH_SIZE_256K							0x40000
-#define FLASH_SIZE_512K							0x80000
-#define FLASH_SIZE_1M							0x100000
-#define FLASH_SIZE_2M							0x200000
-#define FLASH_SIZE_4M							0x400000
-#define FLASH_SIZE_8M							0x800000
-#define FLASH_SIZE_16M							0x1000000
-#define FLASH_SIZE_32M							0x2000000
+#define FLASH_SIZE_256K				0x40000
+#define FLASH_SIZE_512K				0x80000
+#define FLASH_SIZE_1M				0x100000
+#define FLASH_SIZE_2M				0x200000
+#define FLASH_SIZE_4M				0x400000
+#define FLASH_SIZE_8M				0x800000
+#define FLASH_SIZE_16M				0x1000000
+#define FLASH_SIZE_32M				0x2000000
 
 #define CONFIG_FLASH_SIZE                       FLASH_SIZE_2M    //配置FLASH大小
 
